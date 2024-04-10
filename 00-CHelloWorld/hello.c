@@ -4,12 +4,6 @@
  * 01/04/24
 */
 #include <stdio.h>
-
-
-int main (){
-   FILE *fl;
-   fl=fopen("output.txt", "w");
-   fprintf(fl, "Hola Mundo");
-   fclose(fl);
-   return 0;
-    }
+int main(void) {
+printf("Hello, World!\n");
+}
