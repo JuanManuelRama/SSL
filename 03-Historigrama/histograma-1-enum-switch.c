@@ -4,26 +4,23 @@ typedef enum{
     IN
 }estados;
 int main(){
-    int c, nl, nw, nc, state;
+    int length, state, c;
     state = OUT;
-    nl = nw = nc = 0;
+    length = 0;
     while ((c = getchar()) != EOF) {
-        ++nc;
-        switch (c){
-            case '\n':
-                nl++;
-            case ' ':
-            case '\t':
-                state = OUT;
-                break;
-            default:
-                if(state == OUT){
+        switch(state){
+            case OUT:
+                if(!(c == ' ' || c == '\n' || c == '\t')){
+                    ++length;
                     state = IN;
-                    nw++;
+               }
+              break;
+            case IN:
+                if(c == ' ' || c == '\n' || c == '\t'){
+                    length = 0;
+                    state = OUT;
                 }
-                break;
+                else ++length;
         }
     }
-    printf("%d, %d, %d \n", nl, nw, nc);
-    return 0;
 }

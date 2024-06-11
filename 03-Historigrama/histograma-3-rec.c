@@ -3,30 +3,44 @@ typedef enum{
     OUT,
     IN
 }estados;
-int nl, nw, nc;
+int length;
 
-void contar(int);
+void out(int);
+void in();
 
 
 int main(){
-    nl = nw = nc = 0 ;
-    contar(OUT);
-    printf ("%d %d %d \n", nl, nw, nc);
+    int c;
+    while((c=getchar()) != EOF)
+        out(c);
     return 0;
 }
 
-void contar(int state){
-    int c;
-    if((c = getchar()) == EOF)
+void out(int c){
+    if(c == ' ' || c == '\n' || c == '\t'){
+        length = 0;
         return;
-   ++nc;
-  if (c=='\n')
-        ++nl;
-    if (c == ' ' || c == '\n' || c == '\t')
-        return (contar(OUT));
-     else if (state == OUT){
-            nw++;
-            return (contar(IN));
-        }
-    return (contar(state));
     }
+    else{
+        ++length;
+        return in();
+    }
+}
+
+void in(){
+    int c;
+    if((c=getchar()) == EOF){
+        length = 0;
+        return;
+    }
+
+    else if(c == ' ' || c == '\n' || c == '\t'){
+        length = 0;
+        return;
+    }
+    else{
+        ++length;
+        return in();
+    }
+        
+}

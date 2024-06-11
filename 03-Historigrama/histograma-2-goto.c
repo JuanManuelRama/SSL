@@ -4,28 +4,21 @@ typedef enum{
     IN
 }estados;
 int main(){
-    int c, nl, nw, nc, state;
-    state = OUT;
-    nl = nw = nc = 0 ;
-
+    int c, length;
+    length = 0;
     contar:
     while ((c = getchar( )) != EOF) {
-        ++nc;
-        if (c=='\n')
-            ++nl;
         if (c == ' ' || c == '\n' || c == '\t')
             goto out;
-        else if (state == OUT) 
+        else
             goto in;
     }
-    printf ("%d %d %d \n", nl, nw, nc);
     return 0;
     out:
-    state = OUT;
+    length = 0;
     goto contar;
     in:
-    state = IN;
-    nw++;
+    ++length;
     goto contar;
 }
 
