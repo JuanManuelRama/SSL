@@ -7,12 +7,8 @@ int main(){
     int c, nl, nw, nc, state;
     state = OUT;
     nl = nw = nc = 0 ;
-    out:
 
-    in:
-    state = IN;
-     nw++;
-
+    contar:
     while ((c = getchar( )) != EOF) {
         ++nc;
         if (c=='\n')
@@ -24,5 +20,12 @@ int main(){
     }
     printf ("%d %d %d \n", nl, nw, nc);
     return 0;
+    out:
+    state = OUT;
+    goto contar;
+    in:
+    state = IN;
+    nw++;
+    goto contar;
 }
 

@@ -28,4 +28,5 @@ void contar(int state){
             nw++;
             return (contar(IN));
         }
+    return (contar(state));
     }

@@ -13,3 +13,5 @@ El histograma es una 5-upla tal que:
 - q = Out
 - F = {Out}
 - T = {Out => In, In=> Out, Out=>Out, In=>In}
+
+
