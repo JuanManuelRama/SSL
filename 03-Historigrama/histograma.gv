@@ -1,0 +1,8 @@
+digraph H{
+    Out->Out[label="ε/++nc"];
+    Out->Out[label ="'/n'/++nl"]
+    Out->In [label="~B/ε"];
+    In->Out[label="   B/++nw"];
+    In->In[label="ε/++nc"];
+    In->In[ label=" /n/++nl"];
+}
