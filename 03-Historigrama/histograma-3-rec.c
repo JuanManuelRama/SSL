@@ -28,13 +28,9 @@ void out(int c){
 }
 
 void in(){
-    int c;
-    if((c=getchar()) == EOF){
-        length = 0;
-        return;
-    }
-
-    else if(c == ' ' || c == '\n' || c == '\t'){
+    int c = getchar();
+        if(c == ' ' || c == '\n' || c == '\t'){
+            printf("%d ", length);
         length = 0;
         return;
     }

@@ -15,7 +15,11 @@ int main(){
     }
     return 0;
     out:
+    if(length>0)
+        printf("%d ", length);
     length = 0;
+    
+    
     goto contar;
     in:
     ++length;

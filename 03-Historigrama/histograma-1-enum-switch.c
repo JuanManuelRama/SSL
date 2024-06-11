@@ -17,6 +17,7 @@ int main(){
               break;
             case IN:
                 if(c == ' ' || c == '\n' || c == '\t'){
+                    printf("%d ", length);
                     length = 0;
                     state = OUT;
                 }
