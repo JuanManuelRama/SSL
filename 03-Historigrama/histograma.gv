@@ -1,6 +1,6 @@
 digraph H{
     Out->In[label="NB/++len"];
     Out->Out[label="B/ε"];
-    In->Out[label="B/len=0"]
+    In->Out[label="B/len=0"];
     In->In[label="NB/++len"];
 }

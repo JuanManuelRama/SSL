@@ -2,9 +2,10 @@
 typedef enum{
     OUT,
     IN
-}estados;
+}STATE;
 int main(){
-    int length, state, c;
+    int length, c;
+    STATE state;
     state = OUT;
     length = 0;
     while ((c = getchar()) != EOF) {
