@@ -1,19 +1,21 @@
-#include <stdio.h>
+#include "histograma.h"
+extern const int MAX_LEN;
 typedef enum{
     OUT,
     IN
 }estados;
 int length;
+int* longitudes;
 
 void out(int);
 void in();
 
-
-int main(){
+int* contar(){
+    longitudes = calloc(MAX_LEN+1, sizeof *longitudes);
     int c;
     while((c=getchar()) != EOF)
         out(c);
-    return 0;
+    return longitudes;
 }
 
 void out(int c){
@@ -30,7 +32,7 @@ void out(int c){
 void in(){
     int c = getchar();
         if(c == ' ' || c == '\n' || c == '\t'){
-            printf("%d ", length);
+            longitudes[length]++;
         length = 0;
         return;
     }

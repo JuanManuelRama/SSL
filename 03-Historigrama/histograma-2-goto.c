@@ -1,5 +1,7 @@
-#include <stdio.h>
-int main(){
+#include "histograma.h"
+extern const int MAX_LEN;
+int* contar(){
+    int* longitudes = calloc(MAX_LEN+1, sizeof *longitudes);
     int length=0;
     goto Out;
 
@@ -21,7 +23,7 @@ int main(){
             case '\n':
             case ' ':
             case '\t':
-            printf("%d ", length);
+            longitudes[length]++;
             length=0;
             goto Out;
             default:
@@ -30,6 +32,6 @@ int main(){
         }
 
     End:
-        return 0;
+        return longitudes;
 }
 

@@ -1,4 +1,4 @@
-digraph H{
+digraph Histograma{
     Out->In[label="NB/++len"];
     Out->Out[label="B/ε"];
     In->Out[label="B/len=0"];
