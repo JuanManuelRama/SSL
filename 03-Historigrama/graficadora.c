@@ -1,5 +1,6 @@
 #include "graficadora.h"
 extern const int MAX_LEN;
+
 void graficar(int* longitudes){
     printf("longitudes");
     for(int i=1; i<=MAX_LEN; i++){
