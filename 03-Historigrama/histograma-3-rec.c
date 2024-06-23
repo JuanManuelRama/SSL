@@ -1,10 +1,9 @@
 #include "histograma.h"
-extern const int MAX_LEN;
 typedef enum{
     OUT,
     IN
 }estados;
-int length;
+int wl;
 int* longitudes;
 
 void out(int);
@@ -20,11 +19,11 @@ int* contar(){
 
 void out(int c){
     if(c == ' ' || c == '\n' || c == '\t'){
-        length = 0;
+        wl = 0;
         return;
     }
     else{
-        ++length;
+        ++wl;
         return in();
     }
 }
@@ -32,12 +31,15 @@ void out(int c){
 void in(){
     int c = getchar();
         if(c == ' ' || c == '\n' || c == '\t'){
-            longitudes[length]++;
-        length = 0;
+            if(wl>MAX_LEN)
+                ++longitudes[MAX_LEN];
+            else 
+                ++longitudes[wl];
+        wl = 0;
         return;
     }
     else{
-        ++length;
+        ++wl;
         return in();
     }
         

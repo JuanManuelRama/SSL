@@ -1,8 +1,9 @@
 #include "histograma.h"
-extern const int MAX_LEN;
+
+
 int* contar(){
     int* longitudes = calloc(MAX_LEN+1, sizeof *longitudes);
-    int length=0;
+    int wl=0;
     goto Out;
 
     Out:
@@ -14,7 +15,7 @@ int* contar(){
             case EOF:
                 goto End;
             default:
-                ++length;
+                ++wl;
                 goto In;
             
         }
@@ -23,11 +24,14 @@ int* contar(){
             case '\n':
             case ' ':
             case '\t':
-            longitudes[length]++;
-            length=0;
+            if(wl>MAX_LEN)
+                ++longitudes[MAX_LEN];
+            else 
+                longitudes[wl]++;
+            wl=0;
             goto Out;
             default:
-                ++length;
+                ++wl;
                 goto In;
         }
 

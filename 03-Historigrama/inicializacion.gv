@@ -1,0 +1,11 @@
+graph Inicializacion{
+    a [label = "="];
+    a -- nl;
+    c[label="="];
+    a -- c;
+    c -- nw;
+    e[label="="];
+    c -- e;
+    e -- nc;
+    e -- 0;
+}

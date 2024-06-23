@@ -1,7 +1,7 @@
 #include "histograma.h"
 #include "graficadora.h"
-const int MAX_LEN = 20;
+const int MAX_LEN = 15;
 int main(){
-    graficar(contar());
+    graficar(contar(), HORIZONTAL);
     return 0;
 }
