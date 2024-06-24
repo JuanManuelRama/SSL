@@ -1,13 +1,14 @@
 digraph Comentario{
+    NC->NC[label="~'/'/c"];
     NC->¿[label="'/'/ε"];
-    ¿->NC[label="c/\"/c\""];
+    ¿->NC[label="~'/'&&~'*'/\"/c\""];
     ¿->CSL[label="'/'/ε"];
     ¿->CML[label="'*'/ε"];
-    CSL->CSL[label="nsl/ε"];
+    CSL->CSL[label="~'/n'/ε"];
     CSL->NC[label="'/n'/' '"];
-    CML->CML[label="NA/ε"];
+    CML->CML[label="~'*'/ε"];
     A[label="?"];
     CML->A[label="'*'/ε"];
-    A->CML[label="NB/ε"];
+    A->CML[label="~'/'/ε"];
     A->NC[label="'/' / ' '"];
 }
