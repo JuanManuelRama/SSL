@@ -21,8 +21,8 @@ rec: $(standar) histograma-3-rec.o $(headers)
 threads: $(standar) histograma-x-threads.o $(headers)
 	$(CC) $(standar) histograma-x-threads.o -o $(output)
 	
-prueba: test.o histograma-1-enum-switch.o graficadora.o $(headers)
-	$(CC) test.o graficadora.o histograma-1-enum-switch.o  -o prueba
+prueba: test.o histograma-1-enum-switch.o  histograma.h
+	$(CC) test.o histograma-1-enum-switch.o  -o $@
 
 clean:
 	del -f *.o 

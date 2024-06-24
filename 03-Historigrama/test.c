@@ -1,5 +1,4 @@
 #include <assert.h>
-#include "graficadora.h"
 #include "histograma.h"
 #include <stdbool.h>
 
@@ -20,6 +19,8 @@ int main(){
     freopen("test.txt","r", stdin);
     int* array = contar();
     assert(compararArrays(arrayEsperado, array));
+    free(array);
+    free(arrayEsperado);
     fclose(stdin);
     remove("test.txt");
     return 0;
