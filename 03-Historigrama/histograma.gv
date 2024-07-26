@@ -1,6 +1,0 @@
-digraph Histograma{
-    Out->In[label="NB/++wl"];
-    Out->Out[label="B/ε"];
-    In->Out[label="B/wl=0 \n array[wl]++"];
-    In->In[label="NB/++wl"];
-}
